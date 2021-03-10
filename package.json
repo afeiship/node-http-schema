@@ -31,6 +31,7 @@
     "release-it": "^14.4.1"
   },
   "publishConfig": {
+    "access": "public",
     "registry": "https://registry.npmjs.org"
   },
   "dependencies": {
@@ -38,5 +39,13 @@
     "@jswork/next": "^1.0.5",
     "@jswork/next-fetch": "^1.0.0",
     "node-fetch": "^2.6.1"
-  }
+  },
+  "keywords": [
+    "node",
+    "http",
+    "shema",
+    "rest",
+    "configuration",
+    "config"
+  ]
 }

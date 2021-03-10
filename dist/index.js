@@ -3,7 +3,7 @@
  * description: Http schema for nodejs.
  * homepage: https://github.com/afeiship/node-http-schema
  * version: 1.0.0
- * date: 2021-03-10T09:38:58.812Z
+ * date: 2021-03-10T09:43:44.529Z
  * license: MIT
  */
 
