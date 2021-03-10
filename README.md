@@ -28,8 +28,7 @@ const apis = httpSchema({
 });
 
 apis.profile().then((res) => {
-  expect(res.login).toBe('afeiship');
-  done();
+  console.log(res);
 });
 ```
 
