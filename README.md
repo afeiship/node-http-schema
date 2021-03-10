@@ -13,9 +13,24 @@ npm install -S @jswork/node-http-schema
 
 ## usage
 ```js
-import nodeHttpSchema from '@jswork/node-http-schema';
+import httpSchema from '@jswork/node-http-schema';
 
-// code goes here
+const apis = httpSchema({
+  host: 'https://api.github.com',
+  request: ['', 'json'],
+  items: [
+    {
+      items: {
+        profile: ['get', '/users/afeiship']
+      }
+    }
+  ]
+});
+
+apis.profile().then((res) => {
+  expect(res.login).toBe('afeiship');
+  done();
+});
 ```
 
 ## license
