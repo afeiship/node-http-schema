@@ -3,16 +3,16 @@
 
   const gulp = require('gulp');
   const $ = require('gulp-load-plugins')({
-    pattern: ['gulp-*', 'gulp.*', 'del', '@feizheng/gulp-*']
+    pattern: ['gulp-*', 'gulp.*', 'del', '@jswork/gulp-*']
   });
+  const tsconfig = require('../tsconfig.json');
 
   gulp.task('scripts', function() {
     return gulp
-      .src('src/*.js')
-      .pipe($.babel())
-      .pipe($.uglify())
-      .pipe($.feizheng.pkgHeader())
+      .src('src/index.ts')
+      .pipe($.jswork.pkgHeader())
+      .pipe($.typescript(tsconfig.compilerOptions))
       .pipe(gulp.dest('dist'))
-      .pipe($.size({ title: '[ size ]:' }));
+      .pipe($.size({ title: '[ minimize size ]:' }));
   });
 })();

@@ -1,5 +1,5 @@
 # node-http-schema
-> Http schema for nodejs.
+> Http schema for nodejs..
 
 [![version][version-image]][version-url]
 [![license][license-image]][license-url]
@@ -8,32 +8,41 @@
 
 ## installation
 ```shell
-npm install -S @jswork/node-http-schema
+npm install @jswork/node-http-schema
 ```
 
 ## usage
 ```js
-import httpSchema from '@jswork/node-http-schema';
+import httpSchema from '@jswork/web-http-schema';
 
-const apis = httpSchema({
-  host: 'https://api.github.com',
-  request: ['', 'json'],
-  items: [
-    {
-      items: {
-        profile: ['get', '/users/afeiship']
+const options = {
+  transformResponse: ({ data }) => {
+    return data;
+  }
+};
+
+const $api = httpSchema(
+  {
+    host: 'https://api.github.com',
+    request: ['', 'json'],
+    items: [
+      {
+        items: {
+          login: ['get', '/users/afeiship']
+        }
       }
-    }
-  ]
-});
+    ]
+  },
+  options
+);
 
-apis.profile().then((res) => {
-  console.log(res);
+$api.login().then((res) => {
+  // res
 });
 ```
 
 ## license
-Code released under [the MIT license](./LICENSE.txt).
+Code released under [the MIT license](https://github.com/afeiship/node-http-schema/blob/master/LICENSE.txt).
 
 [version-image]: https://img.shields.io/npm/v/@jswork/node-http-schema
 [version-url]: https://npmjs.org/package/@jswork/node-http-schema
