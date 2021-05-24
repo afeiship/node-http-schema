@@ -13,7 +13,7 @@ npm install @jswork/node-http-schema
 
 ## usage
 ```js
-import httpSchema from '@jswork/web-http-schema';
+import httpSchema from '@jswork/node-http-schema';
 
 const options = {
   transformResponse: ({ data }) => {
