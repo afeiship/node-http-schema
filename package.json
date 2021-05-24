@@ -1,6 +1,6 @@
 {
   "name": "@jswork/node-http-schema",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Http schema for nodejs.",
   "main": "dist/index.js",
   "scripts": {
